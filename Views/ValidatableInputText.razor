@@ -1,0 +1,21 @@
+@using System.Linq.Expressions
+<div>
+    <div>
+        <InputText id="text"
+            ValueExpression="@this.For"
+            Value="@this.Value"/>
+    </div>
+</div>
+
+@code
+{
+    [Parameter]
+    public string Value { get; set; } = string.Empty;
+
+    [Parameter]
+    public Expression<Func<string>> For { get; set; } = null!;
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; } = null!;
+
+}
